@@ -7,9 +7,23 @@ class MyDocument extends Document {
         <Head>
           <link
             rel="preload"
-            href="/fonts/inter-var-latin.woff2"
+            href="/fonts/BebasNeue-Regular.woff2"
             as="font"
             type="font/woff2"
+            crossOrigin="anonymous"
+          />
+          <link
+            rel="preload"
+            href="/fonts/Montserrat-SemiBold.ttf"
+            as="font"
+            type="truetype"
+            crossOrigin="anonymous"
+          />
+          <link
+            rel="preload"
+            href="/fonts/Rooney-LightItalic.ttf"
+            as="font"
+            type="truetype"
             crossOrigin="anonymous"
           />
           <link href="/static/favicons/favicon.ico" rel="shortcut icon" />
@@ -47,11 +61,8 @@ class MyDocument extends Document {
             content="/static/favicons/browserconfig.xml"
             name="msapplication-config"
           />
-          {/* <meta content="14d2e73487fa6c71" name="yandex-verification" /> */}
-          {/* <meta
-            content="eZSdmzAXlLkKhNJzfgwDqWORghxnJ8qR9_CHdAh5-xw"
-            name="google-site-verification"
-          /> */}
+          <meta content="" name="yandex-verification" />
+          <meta content="" name="google-site-verification" />
         </Head>
         <body>
           <Main />

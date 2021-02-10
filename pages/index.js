@@ -1,4 +1,5 @@
-import styled from 'styled-components';
+import styled from "styled-components";
+import Hero from "../components/Hero";
 
 const Container = styled.div`
   text-align: center;
@@ -8,6 +9,7 @@ export default function Home() {
   return (
     <>
       <Container>
+        <Hero />
         <h1>Hello, world!</h1>
       </Container>
     </>

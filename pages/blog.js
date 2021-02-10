@@ -1,11 +1,11 @@
-import { useState } from 'react';
+import { useState } from "react";
 
-import Container from '../components/Container';
-import BlogPost from '../components/BlogPost';
-import { getAllFilesFrontMatter } from '../lib/mdx';
+import Container from "../components/Container";
+import BlogPost from "../components/BlogPost";
+import { getAllFilesFrontMatter } from "../lib/mdx";
 
 export default function Blog({ posts }) {
-  const [searchValue, setSearchValue] = useState('');
+  const [searchValue, setSearchValue] = useState("");
   const filteredBlogPosts = posts
     .sort(
       (a, b) =>
@@ -18,7 +18,7 @@ export default function Blog({ posts }) {
   return (
     <Container
       title="Blog – Oscar Bustos"
-      description="Hablando sobre el mundo del desarrollo, vida personal y proyectos."
+      description="Hablando sobre el mundo del desarrollo, tecnología y vida personal."
     >
       <div>
         <h1>Blog</h1>
@@ -29,10 +29,10 @@ export default function Blog({ posts }) {
         </p>
         <div>
           <input
-            aria-label="Buscar articles"
+            aria-label="Buscar artículos"
             type="text"
             onChange={(e) => setSearchValue(e.target.value)}
-            placeholder="Buscar articles"
+            placeholder="Buscar artículos"
           />
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -69,7 +69,7 @@ export default function Blog({ posts }) {
 }
 
 export async function getStaticProps() {
-  const posts = await getAllFilesFrontMatter('blog');
+  const posts = await getAllFilesFrontMatter("blog");
 
   return { props: { posts } };
 }

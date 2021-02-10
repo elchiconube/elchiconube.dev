@@ -1,16 +1,18 @@
-import Head from 'next/head';
-import { useRouter } from 'next/router';
-import NextLink from 'next/link';
+import Head from "next/head";
+import { useRouter } from "next/router";
+
+import Footer from "./Footer";
+import Header from "./Header";
 
 export default function Container(props) {
   const { children, ...customMeta } = props;
   const router = useRouter();
   const meta = {
-    title: 'Oscar Bustos – Developer.',
-    description: `Frontend developer, JavaScript enthusiast.`,
-    image: 'https://elchiconube.dev/static/images/banner.png',
-    type: 'website',
-    ...customMeta
+    title: "Oscar Bustos – Developer, tech enthusiast, teacher ",
+    description: `Developer, tech enthusiast, teacher.`,
+    image: "https://elchiconube.dev/static/images/banner.png",
+    type: "website",
+    ...customMeta,
   };
 
   return (
@@ -41,18 +43,9 @@ export default function Container(props) {
           <meta property="article:published_time" content={meta.date} />
         )}
       </Head>
-      <nav>
-        <NextLink href="/about">
-          <a>About</a>
-        </NextLink>
-        <NextLink href="/">
-          <a>Home</a>
-        </NextLink>
-      </nav>
-      <main>
-        {children}
-        <footer>FOOTER</footer>
-      </main>
+      <Header />
+      <main>{children}</main>
+      <Footer />
     </div>
   );
 }
