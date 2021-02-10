@@ -8,13 +8,32 @@
     "start": "next start"
   },
   "dependencies": {
+    "@mdx-js/loader": "1.6.22",
+    "@mdx-js/react": "1.6.22",
+    "@next/mdx": "10.0.5",
+    "date-fns": "2.16.1",
     "fathom-client": "^3.0.0",
+    "gray-matter": "^4.0.2",
+    "mdx-prism": "^0.3.1",
     "next": "10.0.6",
+    "next-mdx-remote": "^2.1.1",
     "react": "17.0.1",
     "react-dom": "17.0.1",
+    "reading-time": "1.2.1",
+    "rehype": "^11.0.0",
+    "remark-autolink-headings": "6.0.1",
+    "remark-code-titles": "0.1.1",
+    "remark-slug": "6.0.0",
     "styled-components": "latest"
   },
   "devDependencies": {
-    "babel-plugin-styled-components": "latest"
+    "babel-plugin-styled-components": "latest",
+    "prettier": "2.2.1"
+  },
+  "prettier": {
+    "arrowParens": "always",
+    "singleQuote": true,
+    "tabWidth": 2,
+    "trailingComma": "none"
   }
 }
