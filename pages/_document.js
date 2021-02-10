@@ -47,11 +47,11 @@ class MyDocument extends Document {
             content="/static/favicons/browserconfig.xml"
             name="msapplication-config"
           />
-          <meta content="14d2e73487fa6c71" name="yandex-verification" />
-          <meta
+          {/* <meta content="14d2e73487fa6c71" name="yandex-verification" /> */}
+          {/* <meta
             content="eZSdmzAXlLkKhNJzfgwDqWORghxnJ8qR9_CHdAh5-xw"
             name="google-site-verification"
-          />
+          /> */}
         </Head>
         <body>
           <Main />
