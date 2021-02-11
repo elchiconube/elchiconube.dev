@@ -1,6 +1,35 @@
-import { createGlobalStyle } from "styled-components";
+import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyle = createGlobalStyle`
+
+  :root {
+    --body-background: #fff;
+    --font-color: #38414b;
+
+    --color-main: #38414b;
+    --color-yellow: #fdbb07;
+    --color-white: white;
+    --color-bts: #283149;
+    --color-clinpify: #242424;
+    --color-utad: #404B69;
+    --color-axel: #F73859;
+    --color-book: #19191B;
+    --color-news: #00818A;
+    --color-contact: #23293;
+
+    --font-base: 'Rooney', Arial, serif;
+    --font-secondary: 'Montserrat-SemiBold', Verdana, sans-serif;
+    --font-tertiary: 'BebasNeue', Verdana, sans-serif;
+
+  }
+
+  [data-theme="dark"] {
+    --body-background: #38414b;
+    --font-color: #fff;
+
+  }
+
+
 html, body, div, span, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 abbr, address, cite, code,
@@ -100,27 +129,22 @@ input, select {
 @font-face {
   font-family: 'Rooney';
   src: url('/fonts/Rooney-LightItalic.ttf');
-  font-weight: normal;
-  font-style: normal;
 }
 
 @font-face {
   font-family: 'BebasNeue';
   src: url('/fonts/BebasNeue-Regular.woff2');
-  font-weight: normal;
-  font-style: normal;
 }
 
 @font-face {
   font-family: 'Montserrat-SemiBold';
   src: url('/fonts/Montserrat-SemiBold.ttf');
-  font-weight: normal;
-  font-style: normal;
 }
 
 body{
-  font-family: ${({ theme }) => theme.font.base};
-  color: ${({ theme }) => theme.color.main};
+  background-color:var(--body-background);
+  font-family: var(--font-base);
+  color: var(--font-color);
   font-size: 16px;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;  
@@ -130,8 +154,7 @@ body{
 }
 
 h1,h2,h3,h4{
-  font-family: ${({ theme }) => theme.font.secondary};
-  font-weight: normal;
+  font-family: var(--font-secondary);
 }
 
 ul{
@@ -145,11 +168,11 @@ p,li{
 
 a{
   text-decoration: none;
-  color: ${({ theme }) => theme.color.yellow};
+  color: var(--color-yellow);
 }
 
 strong{
-  color: ${({ theme }) => theme.color.yellow};
+  color: var(--color-yellow);
   font-weight: normal;
 }
 

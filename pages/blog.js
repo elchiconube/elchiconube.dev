@@ -1,11 +1,11 @@
-import { useState } from "react";
+import { useState } from 'react';
 
-import Container from "../components/Container";
-import BlogPost from "../components/BlogPost";
-import { getAllFilesFrontMatter } from "../lib/mdx";
+import Container from '../components/Container';
+import BlogPost from '../components/BlogPost';
+import { getAllFilesFrontMatter } from '../lib/mdx';
 
 export default function Blog({ posts }) {
-  const [searchValue, setSearchValue] = useState("");
+  const [searchValue, setSearchValue] = useState('');
   const filteredBlogPosts = posts
     .sort(
       (a, b) =>
@@ -69,7 +69,7 @@ export default function Blog({ posts }) {
 }
 
 export async function getStaticProps() {
-  const posts = await getAllFilesFrontMatter("blog");
+  const posts = await getAllFilesFrontMatter('blog');
 
   return { props: { posts } };
 }

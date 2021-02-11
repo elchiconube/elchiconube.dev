@@ -1,4 +1,4 @@
-import Document, { Html, Head, Main, NextScript } from "next/document";
+import Document, { Html, Head, Main, NextScript } from 'next/document';
 
 class MyDocument extends Document {
   render() {
@@ -16,14 +16,14 @@ class MyDocument extends Document {
             rel="preload"
             href="/fonts/Montserrat-SemiBold.ttf"
             as="font"
-            type="truetype"
+            type="font/ttf"
             crossOrigin="anonymous"
           />
           <link
             rel="preload"
             href="/fonts/Rooney-LightItalic.ttf"
             as="font"
-            type="truetype"
+            type="font/ttf"
             crossOrigin="anonymous"
           />
           <link href="/static/favicons/favicon.ico" rel="shortcut icon" />

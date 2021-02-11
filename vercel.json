@@ -33,7 +33,7 @@
   "redirects": [
     {
       "source": "/projects",
-      "destination": "/about"
+      "destination": "/sobre-mi"
     }
   ]
 }

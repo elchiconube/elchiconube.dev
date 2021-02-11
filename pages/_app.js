@@ -1,13 +1,13 @@
-import theme from "../styles/theme";
-import GlobalStyle from "../styles/GlobalStyle";
-import { ThemeProvider } from "styled-components";
-import { useAnalytics } from "../lib/analytics";
+import GlobalStyle from '../styles/GlobalStyle';
+import { useAnalytics } from '../lib/analytics';
+
+import { ThemeProvider } from 'next-themes';
 
 function App({ Component, pageProps }) {
   // useAnalytics();
 
   return (
-    <ThemeProvider theme={theme}>
+    <ThemeProvider>
       <GlobalStyle />
       <Component {...pageProps} />
     </ThemeProvider>

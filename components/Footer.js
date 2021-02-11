@@ -1,42 +1,43 @@
-import Link from "next/link";
+import Link from 'next/link';
+import styled from 'styled-components';
+import SocialLinks from './SocialLinks';
+import SectionHeading from './SectionHeading';
+import SectionSubheading from './SectionSubheading';
+import FooterLinks from './FooterLinks';
+import Separator from './Separator';
 
-const ExternalLink = ({ href, children }) => (
-  <a target="_blank" rel="noopener noreferrer" href={href}>
-    {children}
-  </a>
-);
+const StyledContainer = styled.footer`
+  background-color: #232932;
+  color: white;
+  text-align: center;
+  padding: 3rem 0 0;
+`;
+
+const StyledWrapper = styled.div`
+  max-width: 600px;
+  margin: 0 auto;
+`;
 
 export default function Footer() {
   return (
-    <footer>
-      <div>
-        <Link href="/">
-          <a>Home</a>
-        </Link>
-        <Link href="/blog">
-          <a>Blog</a>
-        </Link>
-        <Link href="/about">
-          <a>About</a>
-        </Link>
-      </div>
-      <div>
-        <ExternalLink href="https://www.linkedin.com/in/oscarbustos">
-          LinkedIn
-        </ExternalLink>
-        <ExternalLink href="https://twitter.com/elchiconube">
-          Twitter
-        </ExternalLink>
-        <ExternalLink href="https://github.com/elchiconube">
-          GitHub
-        </ExternalLink>
-        <ExternalLink href="https://codepen.io/elchiconube/">
-          Codepen
-        </ExternalLink>
-        <ExternalLink href="https://dribbble.com/elchiconube">
-          Dribbble
-        </ExternalLink>
-      </div>
-    </footer>
+    <StyledContainer>
+      <StyledWrapper>
+        <SectionSubheading>Eso es todo</SectionSubheading>
+        <SectionHeading negative>Hablemos</SectionHeading>
+        <p>
+          Si necesitas ponerte en contacto conmigo puedes hacerlo sin problema,
+          ya sea para hablar sobre desarrollo o sobre nuevos proyectos puedes
+          hacerlo escribiéndome un correo electrónico. Prometo contestar lo
+          antes posible
+        </p>
+        <Separator negative />
+        <p>
+          Si lo prefieres también puedes ponerte en contacto a través de mis
+          redes sociales
+        </p>
+        <SocialLinks />
+      </StyledWrapper>
+      <FooterLinks />
+    </StyledContainer>
   );
 }
