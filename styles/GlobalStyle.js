@@ -5,6 +5,7 @@ const GlobalStyle = createGlobalStyle`
   :root {
     --body-background: #fff;
     --font-color: #38414b;
+    --switch-color: #fdbb07;
 
     --color-main: #38414b;
     --color-yellow: #fdbb07;
@@ -26,6 +27,7 @@ const GlobalStyle = createGlobalStyle`
   [data-theme="dark"] {
     --body-background: #38414b;
     --font-color: #fff;
+    --switch-color: #fdbb07;
 
   }
 
@@ -139,6 +141,12 @@ input, select {
 @font-face {
   font-family: 'Montserrat-SemiBold';
   src: url('/fonts/Montserrat-SemiBold.ttf');
+}
+
+@keyframes grow {
+  from {
+    box-shadow: 2vmin 2vmin var(--switch-color), -2vmin -2vmin var(--switch-color), 0 2.5vmin var(--switch-color), 0 -2.5vmin var(--switch-color), -2.5vmin 0 var(--switch-color), 2.5vmin 0 var(--switch-color), 2vmin -2vmin var(--switch-color), -2vmin 2vmin var(--switch-color);
+  }
 }
 
 body{

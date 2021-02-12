@@ -6,6 +6,7 @@ import GetInTouch from '../components/GetInTouch';
 export default function About() {
   return (
     <Container title="Acerca de – Oscar Bustos">
+      <Hero />
       <AboutSection />
       <GetInTouch />
     </Container>
