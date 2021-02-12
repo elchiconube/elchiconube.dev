@@ -6,6 +6,8 @@ const GlobalStyle = createGlobalStyle`
     --body-background: #fff;
     --font-color: #38414b;
     --switch-color: #fdbb07;
+    --hr-color: #ccc;
+    --card-color: #fff;
 
     --color-main: #38414b;
     --color-yellow: #fdbb07;
@@ -22,12 +24,15 @@ const GlobalStyle = createGlobalStyle`
     --font-secondary: 'Montserrat-SemiBold', Verdana, sans-serif;
     --font-tertiary: 'BebasNeue', Verdana, sans-serif;
 
+    --transition: 300ms ease-in-out;
   }
 
   [data-theme="dark"] {
     --body-background: #38414b;
     --font-color: #fff;
     --switch-color: #fdbb07;
+    --hr-color: #1f2429;
+    --card-color: #1f2429;
 
   }
 
@@ -129,19 +134,29 @@ input, select {
 }
 
 @font-face {
-  font-family: 'Rooney';
-  src: url('/fonts/Rooney-LightItalic.ttf');
-}
+   font-family: 'Rooney' ;
+   src: url('/fonts/Rooney-LightItalic.ttf') format("truetype");
+   font-weight: normal;
+    font-style: normal;
 
-@font-face {
-  font-family: 'BebasNeue';
-  src: url('/fonts/BebasNeue-Regular.woff2');
-}
+ }
 
-@font-face {
-  font-family: 'Montserrat-SemiBold';
-  src: url('/fonts/Montserrat-SemiBold.ttf');
-}
+ @font-face {
+   font-family: 'Montserrat-SemiBold' ;
+   src: url('/fonts/Montserrat-SemiBold.ttf') format("truetype");
+   font-weight: normal;
+    font-style: normal;
+
+ }
+
+ @font-face {
+   font-family: 'BebasNeue' ;
+   src: url('/fonts/BebasNeue-Regular.woff2') format('woff2');
+   font-weight: normal;
+    font-style: normal;
+
+ }
+
 
 @keyframes grow {
   from {
@@ -154,15 +169,15 @@ body{
   font-family: var(--font-base);
   color: var(--font-color);
   font-size: 16px;
-  -ms-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%;  
+  text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-rendering: optimizeLegibility;
+  transition: background-color var(--transition);
 }
 
 h1,h2,h3,h4{
   font-family: var(--font-secondary);
+  font-weight: normal;
 }
 
 ul{

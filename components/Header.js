@@ -1,38 +1,35 @@
 import styled from 'styled-components';
-import useIsScrollOnTop from '../hooks/useIsScrollOnTop';
 import Link from 'next/link';
 import ThemeSwitch from './ThemeSwitch';
 
 const StyledContainer = styled.header`
-  position: ${({ isScrollOnTop }) => (isScrollOnTop ? 'inherit' : 'fixed')};
   width: 100%;
   top: 0;
   z-index: 4;
-  display: flex;
-  padding: 1rem;
-  justify-content: space-between;
-  transition: background-color 300ms ease-in-out;
-  background-color: ${({ isScrollOnTop }) =>
-    isScrollOnTop ? 'transparent' : 'rgba(0, 0, 0, 0.6)'};
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  background-color: var(--body-background);
 `;
-const StyledNav = styled.nav`
-  display: flex;
-  justify-content: flex-end;
 
+const StyledNav = styled.nav`
+  text-align: right;
+  padding-right: 1rem;
   a {
     color: ${({ isScrollOnTop }) =>
       isScrollOnTop ? 'var(--color-main)' : 'white'};
     font-family: var(--font-secondary);
-    padding: 1.5rem;
+    padding: 1rem 0.7rem;
     display: inline-block;
+    font-size: 0.9rem;
+    line-height: 28px;
+    color: var(--font-color);
   }
 `;
 export default function Header() {
-  const isScrollOnTop = useIsScrollOnTop(550);
   return (
-    <StyledContainer isScrollOnTop={isScrollOnTop}>
+    <StyledContainer>
       <ThemeSwitch />
-      <StyledNav isScrollOnTop={isScrollOnTop}>
+      <StyledNav>
         <Link href="/">
           <a>Home</a>
         </Link>

@@ -4,30 +4,28 @@ import styled from 'styled-components';
 
 const StyledContainer = styled.div`
   display: flex;
-  width: 65px;
-  height: 65px;
+  cursor: pointer;
   justify-content: center;
   align-items: center;
 `;
 
 const StyledSwitcher = styled.div`
   color: var(--switch-color);
-  width: 5vmin;
-  height: 5vmin;
+  width: 60px;
+  height: 60px;
   background: var(--switch-color);
   border-radius: 50%;
   display: grid;
   place-items: center;
-  cursor: pointer;
-  transition: all 300ms ease;
+  transition: all 100ms ease-in-out;
   position: relative;
-  transform: scale(0.3);
+  transform: scale(0.25);
 
   &:after {
     content: '';
     grid-area: 1/1/-1/-1;
-    width: 5vmin;
-    height: 5vmin;
+    width: 60px;
+    height: 60px;
     z-index: 1;
     display: block;
     border-radius: 50%;
@@ -39,25 +37,21 @@ const StyledSwitcher = styled.div`
         ? 'scale(1.95) translate(80%, -80%)'
         : 'scale(1.2) translate(20%, -30%)'};
 
-    transition: transform 700ms ease;
+    transition: transform 100ms ease-in-out;
   }
   &:before {
     content: '';
-    width: 2vmin;
-    height: 2vmin;
+    width: 25px;
+    height: 25px;
     z-index: 2;
     display: ${({ theme }) => (theme === 'light' ? 'block' : 'none')};
     border-radius: 50%;
     grid-area: 1/1/-1/-1;
-    animation: grow 300ms ease;
-    box-shadow: 3.333333333333333vmin 3.333333333333333vmin var(--switch-color),
-      -3.333333333333333vmin -3.333333333333333vmin var(--switch-color),
-      0 4.761904761904762vmin var(--switch-color),
-      0 -4.761904761904762vmin var(--switch-color),
-      -4.761904761904762vmin 0 var(--switch-color),
-      4.761904761904762vmin 0 var(--switch-color),
-      3.333333333333333vmin -3.333333333333333vmin var(--switch-color),
-      -3.333333333333333vmin 3.333333333333333vmin var(--switch-color);
+    animation: grow 100ms ease-in-out;
+    box-shadow: 45px 45px var(--switch-color), -45px -45px var(--switch-color),
+      0 60px var(--switch-color), 0 -60px var(--switch-color),
+      -60px 0 var(--switch-color), 60px 0 var(--switch-color),
+      45px -45px var(--switch-color), -45px 45px var(--switch-color);
   }
 `;
 
@@ -82,11 +76,10 @@ const ThemeSwitch = () => {
   if (!mounted) return null;
 
   return (
-    <StyledContainer>
-      <StyledSwitcher
-        theme={theme}
-        onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}
-      />
+    <StyledContainer
+      onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}
+    >
+      <StyledSwitcher theme={theme} />
     </StyledContainer>
   );
 };

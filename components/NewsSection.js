@@ -6,7 +6,6 @@ import Separator from './Separator';
 import BlogPost from './BlogPost';
 
 const StyledContainer = styled.div`
-  background: #00818a;
   padding: 3rem 0;
 `;
 
@@ -14,7 +13,7 @@ const StyledWrapper = styled.div`
   max-width: 600px;
   margin: 0 auto;
   text-align: center;
-  color: white;
+  color: var(--font-color);
 `;
 
 const StyledList = styled.ul`

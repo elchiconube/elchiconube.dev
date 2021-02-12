@@ -4,12 +4,12 @@ const StyledHr = styled.hr`
   display: block;
   height: 1px;
   border: 0;
-  border-top: 1px solid ${({ negative }) => (negative ? 'white' : '#ccc')};
+  border-top: 1px solid var(--hr-color);
   padding: 0;
   margin: 3rem auto;
   width: 10%;
 `;
 
-export default function Separator({ negative }) {
-  return <StyledHr negative={negative} />;
+export default function Separator() {
+  return <StyledHr />;
 }

@@ -1,18 +1,17 @@
-import Head from "next/head";
-import { useRouter } from "next/router";
-
-import Footer from "./Footer";
-import Header from "./Header";
+import Head from 'next/head';
+import { useRouter } from 'next/router';
+import Footer from './Footer';
+import Header from './Header';
 
 export default function Container(props) {
   const { children, ...customMeta } = props;
   const router = useRouter();
   const meta = {
-    title: "Oscar Bustos – Developer, tech enthusiast, teacher ",
+    title: 'Oscar Bustos – Developer, tech enthusiast, teacher ',
     description: `Developer, tech enthusiast, teacher.`,
-    image: "https://elchiconube.dev/static/images/banner.png",
-    type: "website",
-    ...customMeta,
+    image: 'https://elchiconube.dev/static/images/banner.png',
+    type: 'website',
+    ...customMeta
   };
 
   return (

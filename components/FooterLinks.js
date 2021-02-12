@@ -8,12 +8,13 @@ const StyledContainer = styled.div`
 const StyledWrapper = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 50px);
-  grid-gap: 1rem;
+  grid-gap: 0.5rem;
   justify-content: center;
 
   a {
     color: white;
     font-family: var(--font-secondary);
+    font-size: 0.8rem;
   }
 `;
 

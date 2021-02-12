@@ -2,12 +2,13 @@ import Link from 'next/link';
 import styled from 'styled-components';
 
 const StyledContainer = styled.article`
-  background-color: white;
+  background-color: var(--card-color);
   position: relative;
   border-radius: 10px;
   overflow: hidden;
   box-shadow: 0 2px 4px rgb(0 0 0 / 3%), 0 2px 4px rgb(0 0 0 / 24%),
     0 0 4px rgb(0 0 0 / 5%);
+  transition: background-color var(--transition);
 `;
 
 const StyledFigure = styled.figure`
@@ -28,7 +29,7 @@ const StyledFigure = styled.figure`
     right: 0;
     opacity: 0;
     z-index: 2;
-    transition: opacity 300ms ease-in-out;
+    transition: opacity var(--transition);
     display: flex;
     align-items: stretch;
     height: 100%;
@@ -50,7 +51,7 @@ const StyledFigure = styled.figure`
     height: 100%;
     opacity: 0;
     z-index: 2;
-    transition: opacity 300ms ease-in-out;
+    transition: opacity var(--transition);
   }
   img {
     position: absolute;
@@ -66,15 +67,17 @@ const StyledFigure = styled.figure`
 
 const StyledContent = styled.div`
   padding: 1rem 1rem 1.5rem;
+  transition: color var(--transition);
+
   h3 {
     font-size: 1.4rem;
-    color: var(--color-main);
+    color: var(--font-color);
     margin-bottom: 0.7rem;
   }
 
   p {
     margin: 0;
-    color: var(--color-main);
+    color: var(--font-color);
   }
 `;
 

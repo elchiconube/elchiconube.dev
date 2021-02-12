@@ -1,8 +1,7 @@
 import styled from 'styled-components';
 
 const StyledHeading = styled.h1`
-  color: ${({ negative }) =>
-    negative ? 'var(--color-white)' : 'var(--color-main)'};
+  color: var(--font-color);
   margin-bottom: 2rem;
   line-height: 3rem;
   font-size: 3rem;

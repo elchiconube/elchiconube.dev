@@ -3,6 +3,50 @@ import { useState } from 'react';
 import Container from '../components/Container';
 import BlogPost from '../components/BlogPost';
 import { getAllFilesFrontMatter } from '../lib/mdx';
+import styled from 'styled-components';
+import SectionHeading from '../components/SectionHeading';
+
+const StyledList = styled.ul`
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 3rem 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
+`;
+
+const StyledHeading = styled.h3`
+  text-align: center;
+  font-size: 1.7rem;
+`;
+
+const StyledWrapper = styled.div`
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 3rem 0;
+`;
+
+const StyledSearch = styled.div`
+  position: relative;
+  input {
+    padding: 1rem;
+    border: 0;
+    border-radius: 5px;
+    display: block;
+    width: 100%;
+    border: 1px solid #e4e4e4;
+    appearance: none;
+    box-shadow: none;
+  }
+  svg {
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: #e4e4e4;
+    padding: 0.5rem;
+    width: 47px;
+  }
+`;
 
 export default function Blog({ posts }) {
   const [searchValue, setSearchValue] = useState('');
@@ -20,14 +64,18 @@ export default function Blog({ posts }) {
       title="Blog – Oscar Bustos"
       description="Hablando sobre el mundo del desarrollo, tecnología y vida personal."
     >
-      <div>
-        <h1>Blog</h1>
+      <StyledWrapper>
+        <SectionHeading negative>Blog</SectionHeading>
+
         <p>
-          {`Nunca he sido una perosna que le guste escribir demasiado, normalmente me comunico más por Twitter aunque me gustaría poder escribir más en este pequeño proyecto que he montado.
-            Actualmente tengo ${posts.length} artículos en este blog.
-            Puedes buscar artículos utilizando el buscador de aquí abajo.`}
+          Nunca he sido una perosna que le guste escribir demasiado, normalmente
+          me comunico más por Twitter aunque me gustaría poder escribir más en
+          este pequeño proyecto que he montado. Actualmente tengo {posts.length}{' '}
+          artículos en este blog. Puedes buscar artículos utilizando el buscador
+          de aquí abajo.
         </p>
-        <div>
+
+        <StyledSearch>
           <input
             aria-label="Buscar artículos"
             type="text"
@@ -47,23 +95,17 @@ export default function Blog({ posts }) {
               d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
             />
           </svg>
-        </div>
-        {!searchValue && (
-          <>
-            <h3>Más populares</h3>
-            <BlogPost
-              title="Revisando el 2020"
-              summary="Haciendo un resumen del año 2020."
-              slug="2020"
-            />
-          </>
-        )}
-        <h3>Todos los artículos</h3>
-        {!filteredBlogPosts.length && <p>No posts found.</p>}
-        {filteredBlogPosts.map((frontMatter) => (
-          <BlogPost key={frontMatter.title} {...frontMatter} />
-        ))}
-      </div>
+        </StyledSearch>
+      </StyledWrapper>
+      {!filteredBlogPosts.length ? (
+        <p>No posts found.</p>
+      ) : (
+        <StyledList>
+          {filteredBlogPosts.map((frontMatter) => (
+            <BlogPost key={frontMatter.title} {...frontMatter} />
+          ))}
+        </StyledList>
+      )}
     </Container>
   );
 }
