@@ -81,8 +81,6 @@ const ThemeSwitch = () => {
 
   if (!mounted) return null;
 
-  console.log(theme);
-
   return (
     <StyledContainer>
       <StyledSwitcher

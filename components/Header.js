@@ -21,7 +21,7 @@ const StyledNav = styled.nav`
 
   a {
     color: ${({ isScrollOnTop }) =>
-      isScrollOnTop ? 'var(--color-main)' : 'var(--color-main)'};
+      isScrollOnTop ? 'var(--color-main)' : 'white'};
     font-family: var(--font-secondary);
     padding: 1.5rem;
     display: inline-block;
@@ -32,7 +32,7 @@ export default function Header() {
   return (
     <StyledContainer isScrollOnTop={isScrollOnTop}>
       <ThemeSwitch />
-      <StyledNav>
+      <StyledNav isScrollOnTop={isScrollOnTop}>
         <Link href="/">
           <a>Home</a>
         </Link>
