@@ -12,7 +12,7 @@ const StyledContainer = styled.div`
 `;
 
 const StyledWrapper = styled.div`
-  max-width: 1200px;
+  max-width: var(--container);
   margin: 0 auto;
   height: calc(100% - 40px);
 `;

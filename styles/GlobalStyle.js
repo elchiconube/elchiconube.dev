@@ -9,6 +9,9 @@ const GlobalStyle = createGlobalStyle`
     --hr-color: #ccc;
     --card-color: #fff;
 
+    --container: 1000px;
+    --container-text: 600px;
+
     --color-main: #38414b;
     --color-yellow: #fdbb07;
     --color-white: white;

@@ -14,7 +14,7 @@ const StyledContainer = styled.footer`
 `;
 
 const StyledWrapper = styled.div`
-  max-width: 600px;
+  max-width: var(--container-text);
   margin: 0 auto;
 `;
 

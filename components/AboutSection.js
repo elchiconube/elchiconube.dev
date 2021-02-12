@@ -5,7 +5,7 @@ import Device from './Device';
 import Button from './Button';
 
 const StyledContainer = styled.section`
-  max-width: 1200px;
+  max-width: var(--container);
   margin: 0 auto;
   display: grid;
   grid-template-columns: 1fr 1fr;

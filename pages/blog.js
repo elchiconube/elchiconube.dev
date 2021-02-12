@@ -7,7 +7,7 @@ import styled from 'styled-components';
 import SectionHeading from '../components/SectionHeading';
 
 const StyledList = styled.ul`
-  max-width: 1200px;
+  max-width: var(--container);
   margin: 0 auto;
   padding: 3rem 0;
   display: grid;
@@ -20,7 +20,7 @@ const StyledHeading = styled.h3`
 `;
 
 const StyledWrapper = styled.div`
-  max-width: 600px;
+  max-width: var(--container-text);
   margin: 0 auto;
   text-align: center;
   padding: 3rem 0;

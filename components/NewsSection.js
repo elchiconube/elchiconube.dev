@@ -10,14 +10,14 @@ const StyledContainer = styled.div`
 `;
 
 const StyledWrapper = styled.div`
-  max-width: 600px;
+  max-width: var(--container-text);
   margin: 0 auto;
   text-align: center;
   color: var(--font-color);
 `;
 
 const StyledList = styled.ul`
-  max-width: 1200px;
+  max-width: var(--container);
   margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
@@ -33,14 +33,14 @@ export default function NewsSection({}) {
     <StyledContainer>
       <StyledWrapper>
         <SectionSubheading>Artículos</SectionSubheading>
-        <SectionHeading negative>“Homines, dum docent, discunt”</SectionHeading>
+        <SectionHeading>“Homines, dum docent, discunt”</SectionHeading>
         <p>
           Me encanta compartir conocimiento porque al hacerlo aprendo. Aquí
           podéis encontrar artículos donde escribo acerca de tecnología,
           desarrollo, tutoriales o incluso de mi vida privada
         </p>
       </StyledWrapper>
-      <Separator negative />
+      <Separator />
       <StyledList>
         <BlogPost
           title="Revisando el 2020"
