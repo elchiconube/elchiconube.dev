@@ -73,6 +73,7 @@ const StyledContent = styled.div`
     font-size: 1.4rem;
     color: var(--font-color);
     margin-bottom: 0.7rem;
+    line-height: 1.2;
   }
 
   p {

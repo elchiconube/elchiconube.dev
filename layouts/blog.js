@@ -10,10 +10,14 @@ const StyledArticle = styled.article`
   h1 {
     margin-bottom: 1.3rem;
     font-size: 2.3rem;
+    line-height: 1.2;
   }
   h2 {
     margin-bottom: 1rem;
-    font-size: 1.8rem;
+    font-size: 1.4rem;
+  }
+  h3 {
+    margin-bottom: 0.6rem;
   }
   ul {
     margin: 1rem 0 2rem 2rem;
@@ -54,7 +58,6 @@ const discussUrl = (slug) =>
   )}`;
 
 export default function BlogLayout({ children, frontMatter }) {
-  console.log(frontMatter);
   return (
     <Container
       title={`${frontMatter.title} – Oscar Bustos`}
