@@ -7,8 +7,9 @@ export default function Container(props) {
   const { children, ...customMeta } = props;
   const router = useRouter();
   const meta = {
-    title: 'Oscar Bustos – Developer, tech enthusiast, teacher ',
-    description: `Developer, tech enthusiast, teacher.`,
+    title:
+      'Oscar Bustos 👨‍💻 | Desarrollador, Javascript, React, CSS, Performance',
+    description: `Artículos y recursos sobre Desarrollo Web, Frontend, Javascript ☕️, React ⚛️, CSS 🎨 y Performance Web ⚡️`,
     image: 'https://elchiconube.dev/static/images/banner.png',
     type: 'website',
     ...customMeta
