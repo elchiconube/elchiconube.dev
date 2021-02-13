@@ -29,7 +29,7 @@ export default function FooterLinks() {
           <a>Blog</a>
         </Link>
         <Link href="/sobre-mi">
-          <a>About</a>
+          <a>Sobre mi</a>
         </Link>
       </StyledWrapper>
     </StyledContainer>

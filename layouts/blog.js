@@ -1,7 +1,50 @@
 import Image from 'next/image';
 import { parseISO, format } from 'date-fns';
-
+import styled from 'styled-components';
 import Container from '../components/Container';
+
+const StyledArticle = styled.article`
+  max-width: var(--container-text);
+  margin: 0 auto;
+  padding: 3rem 0;
+  h1 {
+    margin-bottom: 1.3rem;
+    font-size: 2.3rem;
+  }
+  h2 {
+    margin-bottom: 1rem;
+    font-size: 1.8rem;
+  }
+  ul {
+    margin: 1rem 0 2rem 2rem;
+    list-style: disc;
+    li {
+      margin-bottom: 0.7rem;
+    }
+  }
+  > div > div:first-child {
+    margin-bottom: 1rem !important;
+  }
+`;
+
+const StyledAvatar = styled.figure`
+  display: inline-block;
+
+  > div {
+    display: inline-block;
+    border-radius: 50%;
+    overflow: hidden;
+  }
+`;
+
+const StyledAddress = styled.address`
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.7rem;
+  p {
+    margin: 0 0 0 1rem;
+  }
+`;
 
 const editUrl = (slug) =>
   `https://github.com/elchiconube/elchiconube.dev/edit/main/data/blog/${slug}.mdx`;
@@ -19,30 +62,26 @@ export default function BlogLayout({ children, frontMatter }) {
       date={new Date(frontMatter.publishedAt).toISOString()}
       type="article"
     >
-      <article>
+      <StyledArticle>
         <h1>{frontMatter.title}</h1>
-        <div>
-          <div>
+        <StyledAddress>
+          <StyledAvatar>
             <Image
               alt="Oscar Bustos"
-              height={24}
-              width={24}
+              height={40}
+              width={40}
               src="/avatar.jpg"
             />
-            <p>
-              {frontMatter.by}
-              {'Oscar Bustos / '}
-              {format(parseISO(frontMatter.publishedAt), 'MMMM dd, yyyy')}
-            </p>
-          </div>
+          </StyledAvatar>
           <p>
-            {frontMatter.readingTime.text}
+            {'Oscar Bustos • '}
+            {format(parseISO(frontMatter.publishedAt), 'dd-MM-yyyy')}
             {` • `}
+            {frontMatter.readingTime.text}
           </p>
-        </div>
+        </StyledAddress>
         <div>{children}</div>
-
-        <div>
+        <footer>
           <a
             href={discussUrl(frontMatter.slug)}
             target="_blank"
@@ -58,8 +97,8 @@ export default function BlogLayout({ children, frontMatter }) {
           >
             {'Editar en GitHub'}
           </a>
-        </div>
-      </article>
+        </footer>
+      </StyledArticle>
     </Container>
   );
 }

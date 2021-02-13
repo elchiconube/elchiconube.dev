@@ -37,7 +37,7 @@ export default function Header() {
           <a>Blog</a>
         </Link>
         <Link href="/sobre-mi">
-          <a>About</a>
+          <a>Sobre mi</a>
         </Link>
       </StyledNav>
     </StyledContainer>

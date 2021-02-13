@@ -10,7 +10,7 @@ const GlobalStyle = createGlobalStyle`
     --card-color: #fff;
 
     --container: 1000px;
-    --container-text: 600px;
+    --container-text: 700px;
 
     --color-main: #38414b;
     --color-yellow: #fdbb07;

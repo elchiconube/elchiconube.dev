@@ -3,7 +3,7 @@ import Hero from '../components/Hero';
 import AboutSection from '../components/AboutSection';
 import GetInTouch from '../components/GetInTouch';
 
-export default function About() {
+export default function SobreMi() {
   return (
     <Container title="Acerca de – Oscar Bustos">
       <Hero />
