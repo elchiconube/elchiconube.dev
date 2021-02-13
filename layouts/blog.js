@@ -54,6 +54,7 @@ const discussUrl = (slug) =>
   )}`;
 
 export default function BlogLayout({ children, frontMatter }) {
+  console.log(frontMatter);
   return (
     <Container
       title={`${frontMatter.title} – Oscar Bustos`}
@@ -77,7 +78,7 @@ export default function BlogLayout({ children, frontMatter }) {
             {'Oscar Bustos • '}
             {format(parseISO(frontMatter.publishedAt), 'dd-MM-yyyy')}
             {` • `}
-            {frontMatter.readingTime.text}
+            {frontMatter.readingTime}
           </p>
         </StyledAddress>
         <div>{children}</div>
