@@ -99,7 +99,9 @@ export default function Blog({ posts }) {
         </StyledSearch>
       </StyledWrapper>
       {!filteredBlogPosts.length ? (
-        <p>No posts found.</p>
+        <StyledHeading>
+          Ups! No hemos encontrado nada, prueba otra cosa.
+        </StyledHeading>
       ) : (
         <StyledList>
           {filteredBlogPosts.map((frontMatter) => (
