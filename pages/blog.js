@@ -18,6 +18,7 @@ const StyledList = styled.ul`
 const StyledHeading = styled.h3`
   text-align: center;
   font-size: 1.7rem;
+  margin: 3rem 0;
 `;
 
 const StyledWrapper = styled.div`
@@ -68,11 +69,9 @@ export default function Blog({ posts }) {
       <StyledWrapper>
         <SectionHeading>Blog</SectionHeading>
         <p>
-          Nunca he sido una perosna que le guste escribir demasiado, normalmente
-          me comunico más por Twitter aunque me gustaría poder escribir más en
-          este pequeño proyecto que he montado. Actualmente tengo {posts.length}{' '}
-          artículos en este blog. Puedes buscar artículos utilizando el buscador
-          de aquí abajo.
+          Normalmente me comunico más por Twitter aunque escribiré de una forma
+          más elaborada aquí. Actualmente tengo {posts.length} artículos en este
+          blog. Puedes buscar artículos utilizando el buscador de aquí abajo.
         </p>
 
         <StyledSearch>
