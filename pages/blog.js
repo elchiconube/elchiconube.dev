@@ -17,8 +17,8 @@ const StyledList = styled.ul`
 
 const StyledHeading = styled.h3`
   text-align: center;
-  font-size: 1.7rem;
-  margin: 3rem 0;
+  font-size: 1.4rem;
+  margin-bottom: 3rem;
 `;
 
 const StyledWrapper = styled.div`
