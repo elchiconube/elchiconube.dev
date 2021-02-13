@@ -66,8 +66,7 @@ export default function Blog({ posts }) {
       description="Hablando sobre el mundo del desarrollo, tecnología y vida personal."
     >
       <StyledWrapper>
-        <SectionHeading negative>Blog</SectionHeading>
-
+        <SectionHeading>Blog</SectionHeading>
         <p>
           Nunca he sido una perosna que le guste escribir demasiado, normalmente
           me comunico más por Twitter aunque me gustaría poder escribir más en
