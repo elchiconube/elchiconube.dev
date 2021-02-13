@@ -63,6 +63,12 @@ class MyDocument extends Document {
           />
           <meta content="" name="yandex-verification" />
           <meta content="" name="google-site-verification" />
+          <script
+            async
+            defer
+            data-domain="elchiconube.dev"
+            src="https://plausible.io/js/plausible.js"
+          ></script>
         </Head>
         <body>
           <Main />
