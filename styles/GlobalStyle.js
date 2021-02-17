@@ -8,7 +8,8 @@ const GlobalStyle = createGlobalStyle`
     --switch-color: #fdbb07;
     --hr-color: #ccc;
     --card-color: #fff;
-
+    --logo-color: #1f242a;
+    
     --container: 1000px;
     --container-text: 700px;
 
@@ -36,6 +37,7 @@ const GlobalStyle = createGlobalStyle`
     --switch-color: #fdbb07;
     --hr-color: #1f2429;
     --card-color: #1f2429;
+    --logo-color: #fff;
 
   }
 
