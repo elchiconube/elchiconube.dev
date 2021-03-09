@@ -138,6 +138,20 @@ input, select {
     box-sizing: border-box;
 }
 
+article > div > pre {
+  font-size: 0.8rem !important;
+  margin: 2rem 0 !important;
+}
+
+article > div  code {
+  background-color: #fdf6e3;
+  padding: 2px;
+  color: #657b83;
+  font-size: 0.9rem ;
+}
+
+
+
 @font-face {
    font-family: 'Rooney' ;
    src: url('/fonts/Rooney-LightItalic.ttf') format("truetype");
