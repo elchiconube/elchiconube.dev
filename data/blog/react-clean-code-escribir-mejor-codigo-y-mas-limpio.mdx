@@ -1,0 +1,242 @@
+---
+title: 'React Clean Code: formas sencillas de escribir un código mejor y más limpio '
+publishedAt: '2020-02-13'
+summary: 'Si estás buscando que tu proyecto llame la atención de los usuarios deberías de leer este artículo para incluir animaciones.'
+image: '/static/images/mejores-librerias-animacion-js/mejores-librerias-animacion-js.jpg'
+---
+
+<!-- https://dev.to/thawkin3/react-clean-code-simple-ways-to-write-better-and-cleaner-code-2loa -->
+
+<Image
+  alt={`React Clean Code: formas sencillas de escribir un código mejor y más limpio `}
+  src={`/static/images/mejores-librerias-animacion-js/mejores-librerias-animacion-js.jpg`}
+  width={1920}
+  height={1354}
+  priority
+/>
+
+Si has trabajado como desarrollador seguro que agradeces cuando te encuentras un código limpio.
+
+El código limpio es fácil de leer, fácil de entender y está bien organizado.
+
+En este artículo os daré ocho formas en las que podemos escribir un código React más limpio.
+
+Estas sugerencias no dejan de ser eso, sugerencias, en ningún caso es obligatorio.
+Sin embargo, estas son algunas de las prácticas que he encontrado más útiles para escribir mi propio código React.
+
+## 01. Renderizado condicional con sólo una condición
+
+Si necesitas renderizar algo de forma condicional cuando una condición es verdadera y no renderizar nada cuando una condición es `false`, no utilices un operador ternario. En su lugar, utiliza el operador `&&`.
+
+### Mal ejemplo
+
+```jsx
+import React, { useState } from 'react';
+
+export const Component = () => {
+  const [isVisible, setIsVisible] = useState(false);
+
+  const handleClick = () => setIsVisible((isVisible) => !isVisible);
+
+  return (
+    <div>
+      <button onClick={handleClick}>Toggle</button>
+      {isVisible ? <p>Mostrar sólo si es visible</p> : null}
+    </div>
+  );
+};
+```
+
+### Buen ejemplo
+
+```jsx
+import React, { useState } from 'react';
+
+export const Component = () => {
+  const [isVisible, setIsVisible] = useState(false);
+
+  const handleClick = () => setIsVisible((isVisible) => !isVisible);
+
+  return (
+    <div>
+      <button onClick={handleClick}>Toggle</button>
+      {isVisible && <p>Mostrar sólo si es visible</p>}
+    </div>
+  );
+};
+```
+
+## 02. Representación condicional con cualquier condición
+
+Si necesita renderizar condicionalmente una cosa cuando una de las condiciones es verdadera y renderizar una cosa diferente cuando la condición es falsa, deberemos de utilizar un operador ternario.
+
+### Mal ejemplo
+
+```jsx
+import React, { useState } from 'react';
+
+export const Component = () => {
+  const [isVisible, setIsVisible] = useState(false);
+
+  const handleClick = () => setIsVisible((isVisible) => !isVisible);
+
+  return (
+    <div>
+      <button onClick={handleClick}>Toggle</button>
+      {isVisible && <p>Mostrar sólo si es visible</p>}
+      {!isVisible && <p>Mostrar sólo si no es visible</p>}
+    </div>
+  );
+};
+```
+
+### Buen ejemplo
+
+```jsx
+import React, { useState } from 'react';
+
+export const Component = () => {
+  const [isVisible, setIsVisible] = useState(false);
+
+  const handleClick = () => setIsVisible((isVisible) => !isVisible);
+
+  return (
+    <div>
+      <button onClick={handleClick}>Toggle</button>
+      {isVisible ? (
+        <p>Mostrar sólo si es visible</p>
+      ) : (
+        <p>Mostrar sólo si no es visible</p>
+      )}
+    </div>
+  );
+};
+```
+
+## 03. Propiedades de tipo Strings
+
+Las propiedades de tipo string se pueden escribir directamente con comillas dobles, sin necesidad de utilizar los corchetes o _template strings_
+
+### Mal ejemplo
+
+```jsx
+import React from 'react';
+
+const Person = ({ name }) => <p>Hola, {name}!</p>;
+
+export const PersonList = () => (
+  <div>
+    <Person name={'Mónica'} />
+    <Person name={'María'} />
+    <Person name={`Marta`} />
+  </div>
+);
+```
+
+### Buen ejemplo
+
+```jsx
+import React from 'react';
+
+const Person = ({ name }) => <p>Hola, {name}!</p>;
+
+export const PersonList = () => (
+  <div>
+    <Person name="Mónica" />
+    <Person name="María" />
+    <Person name="Marta" />
+  </div>
+);
+```
+
+## 04. Métodos para control de eventos
+
+Si un controlador de eventos solo toma un único argumento para el objeto de evento, puede proporcionar la función como el controlador de eventos de esta manera: `onChange={handleChange}`. No es necesario que envolver la función en una función anónima como esta: `onChange={e => handleChange(e)}`.
+
+### Mal ejemplo
+
+```jsx
+import React, { useState } from 'react';
+
+export const Component = () => {
+  const [value, setValue] = useState('');
+
+  const handleChange = (e) => setValue(e.target.value);
+
+  return (
+    <>
+      <label htmlFor="name">Nombre: </label>
+      <input id="name" value={inputValue} onChange={(e) => handleChange(e)} />
+    </>
+  );
+};
+```
+
+### Buen ejemplo
+
+```jsx
+import React, { useState } from 'react';
+
+export const Component = () => {
+  const [value, setValue] = useState('');
+
+  const handleChange = (e) => setValue(e.target.value);
+
+  return (
+    <>
+      <label htmlFor="name">Nombre: </label>
+      <input id="name" value={inputValue} onChange={handleChange} />
+    </>
+  );
+};
+```
+
+## 05. Pasando componentes como propiedades
+
+Al pasar un componente como propiedad, no es necesario envolver este componente en una función si el componente no acepta ninguna propiedad.
+
+### Mal ejemplo
+
+```jsx
+import React from 'react';
+
+const CircleIcon = () => (
+  <svg height="100" width="100">
+    <circle cx="50" cy="50" r="40" stroke="black" stroke-width="3" fill="red" />
+  </svg>
+);
+
+const ComponentThatAcceptsAnIcon = ({ IconComponent }) => (
+  <div>
+    <p>Below is the icon component prop I was given:</p>
+    <IconComponent />
+  </div>
+);
+
+export const UnnecessaryAnonymousFunctionComponentsBad = () => (
+  <ComponentThatAcceptsAnIcon IconComponent={() => <CircleIcon />} />
+);
+```
+
+### Buen ejemplo
+
+```jsx
+import React from 'react';
+
+const CircleIcon = () => (
+  <svg height="100" width="100">
+    <circle cx="50" cy="50" r="40" stroke="black" stroke-width="3" fill="red" />
+  </svg>
+);
+
+const ComponentThatAcceptsAnIcon = ({ IconComponent }) => (
+  <div>
+    <p>Below is the icon component prop I was given:</p>
+    <IconComponent />
+  </div>
+);
+
+export const UnnecessaryAnonymousFunctionComponentsGood = () => (
+  <ComponentThatAcceptsAnIcon IconComponent={CircleIcon} />
+);
+```
